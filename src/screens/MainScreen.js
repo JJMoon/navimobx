@@ -3,23 +3,26 @@ import { Text, View, Button } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
 import PropTypes from 'prop-types';
 
-@inject('store') @observer
 /**
 * JSDOC : APP
 */
+@inject('store') @observer
 class MainScreen extends Component {
   render() {
     const { navigate } = this.props.navigation;
 
     return (
-      <View style={{ marginTop: 80, height: 300, width: '100%', backgroundColor: '#3BC' }}>
+      <View style={{ marginTop: 80, height: 300, width: '100%', backgroundColor: '#EEE' }}>
         <Text>Item: {this.props.store.item}</Text>
         <Button
           title="Go to Second Screen"
           onPress={() => navigate('Second')}
         />
 
-        <Text>Item is item ... so what.... </Text>
+        <Button
+          title="Screen without Navigation Bar"
+          onPress={() => navigate('SecondWithoutNavigationBar')}
+        />
 
       </View>
     );

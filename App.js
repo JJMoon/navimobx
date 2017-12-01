@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import { Provider as MobXProvider, observer } from 'mobx-react/native';
 
 import Store from './src/stores/Store';
@@ -13,18 +13,17 @@ import Navigator from './src/navigator';
 
 const store = new Store();
 
-@observer
 /**
 * JSDOC : APP
 */
+@observer
 export default class App extends React.Component<{}> {
   render() {
     return (
       <MobXProvider store={store}>
-        <View style={{ paddingTop: 20, backgroundColor: '#ABC' }}>
+        <SafeAreaView style={{ flex: 100, backgroundColor: '#EEE' }}>
           <Navigator />
-          <View style={{ flex: 1, backgroundColor: '#89A' }} />
-        </View>
+        </SafeAreaView>
       </MobXProvider>
     );
   }

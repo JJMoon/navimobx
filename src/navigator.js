@@ -13,6 +13,12 @@ const Navigator = StackNavigator({
     screen: MainScreen,
   },
   Second: { screen: SecondScreen },
+  SecondWithoutNavigationBar: {
+    navigationOptions: {
+      header: null,
+    },
+    screen: SecondScreen,
+  },
 });
 
 export default Navigator;
