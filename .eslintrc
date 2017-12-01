@@ -10,6 +10,7 @@
   },
   "rules": {
     "camelcase": "off",
+    "class-methods-use-this": [ "off", {"exceptMethods": ["render", "componentWillMount"]}],
     "func-names": ["error", "as-needed"],
     "global-require": "off",
     "guard-for-in": "off",
@@ -41,19 +42,12 @@
     "react/jsx-filename-extension": "off",
     "react/jsx-first-prop-new-line": ["off"],
     "react/jsx-max-props-per-line": [ "off", { "maximum": 20, "when": "always" }],
-    "class-methods-use-this": [ "off", {"exceptMethods": ["render", "componentWillMount"]}],
+    "require-jsdoc": "off",
     "valid-jsdoc": ["error", {
       "requireReturn": true,
       "requireReturnType": true,
       "requireParamDescription": true,
       "requireReturnDescription": true
-    }],
-    "require-jsdoc": ["error", {
-        "require": {
-            "FunctionDeclaration": false,
-            "MethodDefinition": false,
-            "ClassDeclaration": true
-        }
     }]
   }
 }
