@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { ScrollView, Text, View, Button } from 'react-native';
+import { inject, observer } from 'mobx-react/native';
 import PropTypes from 'prop-types';
 
 /**
 * JSDOC : APP
 */
+@inject('store') @observer
 class SecondScreen extends Component {
   render() {
     const { goBack } = this.props.navigation;
@@ -17,6 +19,11 @@ class SecondScreen extends Component {
           style={{ flex: 1 }}
           title="Go back"
           onPress={() => goBack()}
+        />
+
+        <Button
+          title="Add ValGuide"
+          onPress={() => this.props.store.addGuide()}
         />
         <View style={{ flex: 10, backgroundColor: '#CBA' }} />
       </View>

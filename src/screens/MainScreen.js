@@ -24,6 +24,11 @@ class MainScreen extends Component {
           onPress={() => navigate('SecondWithoutNavigationBar')}
         />
 
+        <Button
+          title="Add ValGuide"
+          onPress={() => this.props.store.addGuide()}
+        />
+
       </View>
     );
   }
