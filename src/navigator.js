@@ -4,6 +4,7 @@ import {
 
 import MainScreen from './screens/MainScreen';
 import SecondScreen from './screens/SecondScreen';
+import TabNavMain from './screens/TabNavigator';
 
 const Navigator = StackNavigator({
   Main: {
@@ -14,10 +15,16 @@ const Navigator = StackNavigator({
   },
   Second: { screen: SecondScreen },
   SecondWithoutNavigationBar: {
+    screen: SecondScreen,
     navigationOptions: {
       header: null,
     },
-    screen: SecondScreen,
+  },
+  TabView: {
+    screen: TabNavMain,
+    navigationOptions: {
+      header: null,
+    },
   },
 });
 
