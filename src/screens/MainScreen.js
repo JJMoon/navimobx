@@ -8,6 +8,10 @@ import PropTypes from 'prop-types';
 */
 @inject('store') @observer
 class MainScreen extends Component {
+  componentDidMount() {
+    console.log(' navigation key ', this.props.navigation.state.key);
+  }
+
   render() {
     const { navigate } = this.props.navigation;
 
