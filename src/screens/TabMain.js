@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, Button } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
+import { NavigationActions } from 'react-navigation';
 import PropTypes from 'prop-types';
 
 /**
@@ -15,6 +16,10 @@ class TabMain extends Component {
     this.goback = goBack;
   }
 
+  componentDidMount() {
+    console.log(' navigation key ', this.props.navigation.state.key);
+  }
+
   render() {
     const { navigate, goBack } = this.props.navigation;
 
@@ -23,7 +28,7 @@ class TabMain extends Component {
         <Text style={{ fontSize: 21 }}> This is Tab View </Text>
         <Button
           title="Show Navigate Object"
-          onPress={() => console.log(' navigator ', this.props.navigation)}
+          onPress={() => this.props.navigation.dispatch(NavigationActions.back())}
         />
 
         <Button
