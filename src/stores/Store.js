@@ -12,5 +12,9 @@ class Store {
     this.guide += 1;
     console.log(' guide ', this.guide);
   }
+
+  @action screenChanged(prev, curn) {
+    console.log('  \t\t\t\t\t\t\t >>>>  Store :: screen changed from :::    ', prev, ' >>>> ', curn);
+  }
 }
 export default Store;

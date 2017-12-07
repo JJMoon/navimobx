@@ -4,16 +4,26 @@ import { inject, observer } from 'mobx-react/native';
 import PropTypes from 'prop-types';
 
 /**
-* JSDOC : APP
+* JSDOC : MainScreen
 */
 @inject('store') @observer
 class MainScreen extends Component {
+  constructor(props) {
+    super(props);
+    console.log('\n\n\n MainScreen :: constructor \n\n\n');
+  }
+
   render() {
     const { navigate } = this.props.navigation;
 
     return (
-      <View style={{ marginTop: 80, height: 300, width: '100%', backgroundColor: '#EEE' }}>
-        <Text>Item: {this.props.store.item}</Text>
+      <View style={{ flex: 1, backgroundColor: '#BFE' }}>
+
+        <Button
+          title="Show Navigate Object"
+          onPress={() => console.log(' navigator ', this.props.navigation)}
+        />
+
         <Button
           title="Go to Second Screen"
           onPress={() => navigate('Second')}
@@ -22,6 +32,11 @@ class MainScreen extends Component {
         <Button
           title="Screen without Navigation Bar"
           onPress={() => navigate('SecondWithoutNavigationBar')}
+        />
+
+        <Button
+          title="Go to Tab View"
+          onPress={() => navigate('TabView')}
         />
 
         <Button
