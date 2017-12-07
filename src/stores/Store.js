@@ -14,7 +14,7 @@ class Store {
   }
 
   @action screenChanged(prev, curn) {
-    console.log('  \t\t\t\t  Store :: screen changed from', prev, curn);
+    console.log('  \t\t\t\t\t\t\t >>>>  Store :: screen changed from :::    ', prev, ' >>>> ', curn);
   }
 }
 export default Store;

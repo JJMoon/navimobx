@@ -8,8 +8,9 @@ import PropTypes from 'prop-types';
 */
 @inject('store') @observer
 class MainScreen extends Component {
-  componentDidMount() {
-    console.log(' navigation key ', this.props.navigation.state.key);
+  constructor(props) {
+    super(props);
+    console.log('\n\n\n MainScreen :: constructor \n\n\n');
   }
 
   render() {
@@ -17,7 +18,6 @@ class MainScreen extends Component {
 
     return (
       <View style={{ flex: 1, backgroundColor: '#BFE' }}>
-        <Text>Item: {this.props.store.item}</Text>
 
         <Button
           title="Show Navigate Object"

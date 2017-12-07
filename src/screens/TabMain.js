@@ -25,9 +25,8 @@ class TabMain extends Component {
 
     return (
       <View style={{ flex: 1, width: '100%', backgroundColor: '#EEB' }}>
-        <Text style={{ fontSize: 21 }}> This is Tab View </Text>
         <Button
-          title="Show Navigate Object"
+          title="Go Back.. "
           onPress={() => this.props.navigation.dispatch(NavigationActions.back())}
         />
 

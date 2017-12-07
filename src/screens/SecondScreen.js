@@ -8,8 +8,22 @@ import PropTypes from 'prop-types';
 */
 @inject('store') @observer
 class SecondScreen extends Component {
+  constructor(props) {
+    super(props);
+    console.log('\n\n\n SecondScreen : Second Screen :: constructor \n\n\n');
+  }
+
+  componentWillMount() {
+    console.log('\n\n\n SecondScreen : Second Screen :: componentWillMount \n\n\n');
+  }
+
   componentDidMount() {
+    console.log('\n\n\n SecondScreen : Second Screen :: componentDidMount Did >>>');
     console.log(' navigation key ', this.props.navigation.state.key);
+  }
+
+  componentWillUnmount() {
+    console.log('\n\n\n SecondScreen : Second Screen :: componentWillUnmount \n\n\n');
   }
 
   render() {
@@ -17,7 +31,6 @@ class SecondScreen extends Component {
 
     return ( // marginTop: 100,
       <View style={{ flex: 100, alignSelf: 'stretch', backgroundColor: '#ABC' }}>
-        <Text style={{ flex: 1 }}>This is the second screen.</Text>
 
         <Button
           style={{ flex: 1 }}

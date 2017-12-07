@@ -39,7 +39,7 @@ export default class App extends React.Component<{}> {
             onNavigationStateChange={(prevState, currentState) => {
               const currentScreen = getCurrentRouteName(currentState);
               const prevScreen = getCurrentRouteName(prevState);
-              console.log('\n  App.js :: onNavigationStateChange  ', currentScreen, prevScreen);
+              // console.log('\n  App.js :: onNavigationStateChange  ', prevScreen, currentScreen);
               if (prevScreen !== currentScreen) {
                 store.screenChanged(prevScreen, currentScreen);
                 // the line below uses the Google Analytics tracker
