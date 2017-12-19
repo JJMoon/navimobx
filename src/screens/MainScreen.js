@@ -19,8 +19,13 @@ class MainScreen extends Component {
     console.log('prop', prop);
   }
 
+  onDragEvent = (prop) => {
+    console.log('onDragEvent', prop);
+  }
+
   render() {
     const { navigate } = this.props.navigation;
+    const wUnit = 100, height = 70;
 
     return (
       <View style={{ flex: 1, backgroundColor: '#BFE' }}>
@@ -50,13 +55,23 @@ class MainScreen extends Component {
           onPress={() => this.props.store.addGuide()}
         />
 
-        <Interactable.View
-          horizontalOnly
-          snapPoints={[{ x: 0 }, { x: 100 }, { x: -100 }, { x: -200 }]}
-          onSnap={this.onDrawerSnap}
-        >
-          <View style={{ width: 300, height: 70, backgroundColor: '#99A' }} />
-        </Interactable.View>
+        <View style={{ width: '100%', height, backgroundColor: '#0000' }} >
+          <View style={{ position: 'absolute', flexDirection: 'row', width: '100%', height: 70 }} >
+            <View style={{ width: wUnit, height, backgroundColor: '#DA8' }} />
+            <View style={{ flex: 1, height, backgroundColor: '#AAA' }} />
+            <View style={{ width: wUnit, height, backgroundColor: '#5DD' }} />
+            <View style={{ width: wUnit, height, backgroundColor: '#D5D' }} />
+          </View>
+          <Interactable.View
+            horizontalOnly
+            snapPoints={[{ x: 0 }, { x: wUnit }, { x: -wUnit }, { x: -2 * wUnit }]}
+            onSnap={this.onDrawerSnap}
+            onDrag={this.onDragEvent}
+          >
+            <View style={{ width: '100%', height, backgroundColor: '#99A' }} />
+          </Interactable.View>
+
+        </View>
 
       </View>
     );
