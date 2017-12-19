@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, TouchableOpacity } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
 import PropTypes from 'prop-types';
 import Interactable from 'react-native-interactable';
@@ -20,7 +20,12 @@ class MainScreen extends Component {
   }
 
   onDragEvent = (prop) => {
-    console.log('onDragEvent', prop);
+    // console.log('onDragEvent', prop);
+  }
+
+  closeTheView = () => {
+    console.log('close the view');
+    this.intView.snapTo({ x: 0 });
   }
 
   render() {
@@ -57,12 +62,19 @@ class MainScreen extends Component {
 
         <View style={{ width: '100%', height, backgroundColor: '#0000' }} >
           <View style={{ position: 'absolute', flexDirection: 'row', width: '100%', height: 70 }} >
-            <View style={{ width: wUnit, height, backgroundColor: '#DA8' }} />
+            <TouchableOpacity style={{ width: wUnit, height, backgroundColor: '#DA8' }}
+              onPress={this.closeTheView}
+            />
             <View style={{ flex: 1, height, backgroundColor: '#AAA' }} />
-            <View style={{ width: wUnit, height, backgroundColor: '#5DD' }} />
-            <View style={{ width: wUnit, height, backgroundColor: '#D5D' }} />
+            <TouchableOpacity style={{ width: wUnit, height, backgroundColor: '#5DD' }}
+              onPress={this.closeTheView}
+            />
+            <TouchableOpacity style={{ width: wUnit, height, backgroundColor: '#D5D' }}
+              onPress={this.closeTheView}
+            />
           </View>
           <Interactable.View
+            ref={r => this.intView = r}
             horizontalOnly
             snapPoints={[{ x: 0 }, { x: wUnit }, { x: -wUnit }, { x: -2 * wUnit }]}
             onSnap={this.onDrawerSnap}
