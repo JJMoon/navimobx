@@ -7,6 +7,8 @@ import SecondScreen from './screens/SecondScreen';
 import TabNavMain from './screens/TabNavigator';
 import DrawerInit from './screens/DrawerInit';
 
+import Drawer from './screens/Drawer';
+
 const Navigator = StackNavigator({
   Main: {
     navigationOptions: {
@@ -28,6 +30,11 @@ const Navigator = StackNavigator({
     },
   },
   Drawer: {
+    name: 'Drawer Example',
+    description: 'Android-style drawer navigation',
+    screen: Drawer,
+  },
+  DrawerInit: {
     screen: DrawerInit,
     navigationOptions: {
       header: null,
