@@ -59,6 +59,10 @@ class MainScreen extends Component {
           title="Add ValGuide"
           onPress={() => this.props.store.addGuide()}
         />
+        <Button
+          title="Go go Drawer Screen"
+          onPress={() => navigate('Drawer')}
+        />
 
         <View style={{ width: '100%', height, backgroundColor: '#0000' }} >
           <View style={{ position: 'absolute', flexDirection: 'row', width: '100%', height: 70 }} >
