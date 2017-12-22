@@ -3,17 +3,21 @@ import { ScrollView, Text, View, Button } from 'react-native';
 import { inject, observer } from 'mobx-react/native';
 import PropTypes from 'prop-types';
 
+import ParentView from '../Compo/ParentView';
 /**
 * JSDOC : APP
 */
 @inject('store') @observer
-class SecondScreen extends Component {
+class SecondScreen extends ParentView {
   constructor(props) {
     super(props);
     console.log('\n\n\n SecondScreen : Second Screen :: constructor \n\n\n');
+    this.props.store.addDelegate(this.screenChanged);
+    // this.screenChanged
   }
 
   componentWillMount() {
+    // super.componentWillMount();
     console.log('\n\n\n SecondScreen : Second Screen :: componentWillMount \n\n\n');
   }
 
@@ -24,10 +28,11 @@ class SecondScreen extends Component {
 
   componentWillUnmount() {
     console.log('\n\n\n SecondScreen : Second Screen :: componentWillUnmount \n\n\n');
+    this.props.store.removeDelegate(this.screenChanged);
   }
 
   render() {
-    const { goBack } = this.props.navigation;
+    const { goBack, navigate } = this.props.navigation;
 
     return ( // marginTop: 100,
       <View style={{ flex: 100, alignSelf: 'stretch', backgroundColor: '#ABC' }}>
@@ -36,6 +41,11 @@ class SecondScreen extends Component {
           style={{ flex: 1 }}
           title="Go back"
           onPress={() => goBack()}
+        />
+
+        <Button
+          title="Go to Tab View"
+          onPress={() => navigate('TabView')}
         />
 
         <Button

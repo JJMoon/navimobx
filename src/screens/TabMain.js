@@ -4,20 +4,27 @@ import { inject, observer } from 'mobx-react/native';
 import { NavigationActions } from 'react-navigation';
 import PropTypes from 'prop-types';
 
+import ParentView from '../Compo/ParentView';
 /**
 * JSDOC : TabMain
 */
 @inject('store') @observer
-class TabMain extends Component {
+class TabMain extends ParentView {
   constructor(props) {
     super(props);
+    console.log('\n\n\n TabMain :: constructor \n\n\n');
     const { goBack } = this.props.navigation;
-
     this.goback = goBack;
+    this.props.store.addDelegate(this.screenChanged);
   }
 
   componentDidMount() {
     console.log(' navigation key ', this.props.navigation.state.key);
+  }
+
+  componentWillUnmount() {
+    console.log('\n\n\n TabMain :: componentWillUnmount \n\n\n');
+    this.props.store.removeDelegate(this.screenChanged);
   }
 
   render() {
@@ -25,6 +32,8 @@ class TabMain extends Component {
 
     return (
       <View style={{ flex: 1, width: '100%', backgroundColor: '#EEB' }}>
+        <View style={{ margin: 20 }} />
+        <Text style={{ fontSize: 15 }}>Tab Main ..  . .. ..  </Text>
         <Button
           title="Go Back.. "
           onPress={() => this.props.navigation.dispatch(NavigationActions.back())}
