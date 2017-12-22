@@ -16,19 +16,24 @@ class SecondScreen extends ParentView {
     // this.screenChanged
   }
 
-  componentWillMount() {
-    // super.componentWillMount();
-    console.log('\n\n\n SecondScreen : Second Screen :: componentWillMount \n\n\n');
-  }
-
   componentDidMount() {
-    console.log('\n\n\n SecondScreen : Second Screen :: componentDidMount Did >>>');
-    console.log(' navigation key ', this.props.navigation.state.key);
+    // console.log('\n\n\n SecondScreen : Second Screen :: componentDidMount Did >>>');
+    // console.log(' navigation key ', this.props.navigation.state.key);
   }
 
   componentWillUnmount() {
-    console.log('\n\n\n SecondScreen : Second Screen :: componentWillUnmount \n\n\n');
+    // console.log('\n\n\n SecondScreen : Second Screen :: componentWillUnmount \n\n\n');
     this.props.store.removeDelegate(this.screenChanged);
+  }
+
+  viewDidAppear() {
+    super.viewDidAppear(); // This is option
+    // Do something here.
+  }
+
+  viewDidDisappear() {
+    super.viewDidDisappear(); // This is option
+    // Do something here
   }
 
   render() {

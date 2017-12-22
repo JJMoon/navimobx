@@ -18,13 +18,19 @@ class TabMain extends ParentView {
     this.props.store.addDelegate(this.screenChanged);
   }
 
-  componentDidMount() {
-    console.log(' navigation key ', this.props.navigation.state.key);
-  }
-
   componentWillUnmount() {
     console.log('\n\n\n TabMain :: componentWillUnmount \n\n\n');
     this.props.store.removeDelegate(this.screenChanged);
+  }
+
+  viewDidAppear() {
+    super.viewDidAppear(); // This is option
+    // Do something here.
+  }
+
+  viewDidDisappear() {
+    super.viewDidDisappear(); // This is option
+    // Do something here
   }
 
   render() {

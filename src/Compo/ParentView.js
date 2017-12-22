@@ -12,6 +12,13 @@ export default class ParentView extends React.Component {
     console.log('\n\n\n ParentView :: constructor \n\n\n', this.props.navigation.state.routeName);
   }
 
+  async componentWillMount() {
+  }
+
+  async componentDidMount() {
+    // console.log('  ParentView ::  Component Did Mount ');
+  }
+
   viewDidAppear() {
     console.log(`\t\t\t\t\t   ParentView :: viewDidAppear     >>>  ${this.state.screenName}  <<<     ..... `);
   }
@@ -20,18 +27,11 @@ export default class ParentView extends React.Component {
     console.log(`\t\t\t\t\t   ParentView :: viewDidDisappear     >>>  ${this.state.screenName}  <<<     ..... `);
   }
 
-  componentWillUnmount() {
-    if (this.timer) {
-      clearInterval(this.timer);
-    }
-  }
-
-  componentDidMount() {
-    console.log('  ParentView ::  Component Did Mount ');
+  async componentWillUnmount() {
   }
 
   screenChanged = (pre, cur) => {
-    console.log('  Parent View :: ', pre, cur, ' I am ', this.state.screenName);
+    // console.log('  Parent View :: ', pre, cur, ' I am ', this.state.screenName);
     if (this.state.screenName === pre) {
       this.viewDidDisappear();
     }
