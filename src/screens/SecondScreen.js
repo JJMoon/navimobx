@@ -16,13 +16,17 @@ class SecondScreen extends ParentView {
     // this.screenChanged
   }
 
+  componentWillMount() {
+    console.log('\n\n SecondScreen : Second Screen :: component Will Mount  >>> \n\n');
+  }
+
   componentDidMount() {
-    // console.log('\n\n\n SecondScreen : Second Screen :: componentDidMount Did >>>');
+    console.log('\n\n\n SecondScreen : Second Screen :: componentDidMount Did >>>');
     // console.log(' navigation key ', this.props.navigation.state.key);
   }
 
   componentWillUnmount() {
-    // console.log('\n\n\n SecondScreen : Second Screen :: componentWillUnmount \n\n\n');
+    console.log('\n\n\n SecondScreen : Second Screen :: componentWillUnmount \n\n\n');
     this.props.store.removeDelegate(this.screenChanged);
   }
 
@@ -37,6 +41,7 @@ class SecondScreen extends ParentView {
   }
 
   render() {
+    console.log('\n SecondScreen :: render  >>> \n');
     const { goBack, navigate } = this.props.navigation;
 
     return ( // marginTop: 100,

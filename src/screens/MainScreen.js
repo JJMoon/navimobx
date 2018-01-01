@@ -13,6 +13,7 @@ class MainScreen extends Component {
   constructor(props) {
     super(props);
     console.log('\n\n\n MainScreen :: constructor \n\n\n');
+    this.state = { counter: 0 };
   }
 
   onDrawerSnap = (prop) => {
@@ -28,7 +29,37 @@ class MainScreen extends Component {
     this.intView.snapTo({ x: 0 });
   }
 
+  componentWillMount() {
+    console.log('\n\n MainScreen :: component Will Mount  >>> \n\n');
+  }
+
+  componentDidMount() {
+    console.log('\n\n MainScreen :: component DidMount  >>> \n\n');
+  }
+
+  componentWillUnmount() {
+    console.log('\n\n\n MainScreen :: component WillUnmount \n\n\n');
+  }
+
+  componentWillReceiveProps() {
+    console.log(' \t\t MainScreen :: component Will Receive Props');
+  }
+
+  shouldComponentUpdate() { // 판단 식.
+    console.log(' \t\t MainScreen :: shouldComponentUpdate');
+    return true;
+  }
+
+  componentWillUpdate() {
+    console.log(' \t\t MainScreen :: component Will Update');
+  }
+
+  componentDidUpdate() {
+    console.log(' \t\t MainScreen :: component Did Update ..... ..... ..... \n\n');
+  }
+
   render() {
+    console.log('\n MainScreen :: render  >>> \n');
     const { navigate } = this.props.navigation;
     const wUnit = 100, height = 70;
 
@@ -62,6 +93,11 @@ class MainScreen extends Component {
         <Button
           title="Go go Drawer Screen"
           onPress={() => navigate('Drawer')}
+        />
+
+        <Button
+          title={'Change State : ' + this.state.counter}
+          onPress={() => this.setState({ counter: this.state.counter + 1 })}
         />
 
         <View style={{ width: '100%', height, backgroundColor: '#0000' }} >
