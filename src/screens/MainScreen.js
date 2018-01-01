@@ -50,7 +50,7 @@ class MainScreen extends Component {
   shouldComponentUpdate() {
     // 판단 식.
     console.log(' \t\t MainScreen :: shouldComponentUpdate');
-    return true;
+    return this.state.counter % 4 !== 0;
   }
 
   componentWillUpdate() {
@@ -85,6 +85,7 @@ class MainScreen extends Component {
           title={'Change State : ' + this.state.counter}
           onPress={() => this.setState({ counter: this.state.counter + 1 })}
         />
+        <Button title={'Force Update'} onPress={() => this.forceUpdate()} />
 
         <SomeText title={'Title'} content={'Content from MainScreen'} />
 
@@ -112,7 +113,7 @@ class MainScreen extends Component {
 
 MainScreen.wrappedComponent.propTypes = {
   navigation: PropTypes.shape().isRequired,
-  store: PropTypes.shape().isRequired
+  store: PropTypes.shape().isRequired,
 };
 
 export default MainScreen;
