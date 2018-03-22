@@ -33,6 +33,9 @@ const Navigator = StackNavigator({
     name: 'Drawer Example',
     description: 'Android-style drawer navigation',
     screen: Drawer,
+    navigationOptions: {
+      header: null,
+    },
   },
   DrawerInit: {
     screen: DrawerInit,
