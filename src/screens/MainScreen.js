@@ -18,11 +18,11 @@ class MainScreen extends Component {
     this.state = { counter: 0 };
   }
 
-  onDrawerSnap = prop => {
+  onDrawerSnap = (prop) => {
     console.log('prop', prop);
   };
 
-  onDragEvent = prop => {
+  onDragEvent = (prop) => {
     // console.log('onDragEvent', prop);
   };
 
@@ -81,16 +81,20 @@ class MainScreen extends Component {
 
         <Button title="Go go Drawer Screen" onPress={() => navigate('Drawer')} />
 
+        <Button title="Open Drawer"
+          onPress={() => navigate('DrawerOpen')}
+        />
+
         <Button
-          title={'Change State : ' + this.state.counter}
+          title={`Change State : ${this.state.counter}`}
           onPress={() => this.setState({ counter: this.state.counter + 1 })}
         />
-        <Button title={'Force Update'} onPress={() => this.forceUpdate()} />
+        <Button title="Force Update" onPress={() => this.forceUpdate()} />
 
-        <SomeText title={'Title'} content={'Content from MainScreen'} />
+        <SomeText title="Title" content="Content from MainScreen" />
 
         <View style={{ width: '100%', height, backgroundColor: '#0000' }}>
-          <View style={{ position: 'absolute', flexDirection: 'row', width: '100%', height: 70 }}>
+          <View style={{ width: '100%', osition: 'absolute', flexDirection: 'row', height: 70 }} >
             <TouchableOpacity style={{ width: wUnit, height, backgroundColor: '#DA8' }} onPress={this.closeTheView} />
             <View style={{ flex: 1, height, backgroundColor: '#AAA' }} />
             <TouchableOpacity style={{ width: wUnit, height, backgroundColor: '#5DD' }} onPress={this.closeTheView} />
