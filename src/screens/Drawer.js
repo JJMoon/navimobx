@@ -1,7 +1,3 @@
-/**
- * @flow
- */
-
 import React from 'react';
 import { Button, Platform, ScrollView, StatusBar } from 'react-native';
 import { DrawerNavigator, SafeAreaView } from 'react-navigation';
@@ -20,14 +16,14 @@ const MyNavScreen = ({ navigation, banner }) => (
 );
 
 const InboxScreen = ({ navigation }) => (
-  <MyNavScreen banner={'Inbox Screen'} navigation={navigation} />
+  <MyNavScreen banner="Inbox Screen" navigation={navigation} />
 );
 InboxScreen.navigationOptions = {
   drawerLabel: 'Inbox',
 };
 
 const DraftsScreen = ({ navigation }) => (
-  <MyNavScreen banner={'Drafts Screen'} navigation={navigation} />
+  <MyNavScreen banner="Drafts Screen" navigation={navigation} />
 );
 DraftsScreen.navigationOptions = {
   drawerLabel: 'Drafts',
