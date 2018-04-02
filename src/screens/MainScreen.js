@@ -77,7 +77,9 @@ class MainScreen extends Component {
 
         <Button title="Go to Tab View" onPress={() => navigate('TabView')} />
 
-        <Button title="Add ValGuide" onPress={() => this.props.store.addGuide()} />
+        <Button title={`MobX store guide :: ${this.props.store.guide}  ${this.props.store.guideTimes}`}
+          onPress={() => this.props.store.addGuide()}
+        />
 
         <Button title="Go go Drawer Screen" onPress={() => navigate('Drawer')} />
 
