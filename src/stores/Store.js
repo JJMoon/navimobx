@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable, action, computed } from 'mobx';
 import _ from 'lodash';
 
 class Store {
@@ -8,6 +8,10 @@ class Store {
 
   @action setItem(data) {
     this.item = data;
+  }
+
+  @computed get guideTimes() {
+    return 3 * this.guide;
   }
 
   @action addGuide() {

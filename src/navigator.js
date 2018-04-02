@@ -9,40 +9,47 @@ import DrawerInit from './screens/DrawerInit';
 
 import Drawer from './screens/Drawer';
 
-const Navigator = StackNavigator({
-  Main: {
-    navigationOptions: {
-      headerTitle: 'Home',
+const Navigator = StackNavigator(
+  {
+    Main: {
+      navigationOptions: {
+        headerTitle: 'Home',
+      },
+      screen: MainScreen,
     },
-    screen: MainScreen,
-  },
-  Second: { screen: SecondScreen },
-  SecondWithoutNavigationBar: {
-    screen: SecondScreen,
-    navigationOptions: {
-      header: null,
+    Second: { screen: SecondScreen },
+    SecondWithoutNavigationBar: {
+      screen: SecondScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    TabView: {
+      screen: TabNavMain,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    Drawer: {
+      name: 'Drawer Example',
+      description: 'Android-style drawer navigation',
+      screen: Drawer,
+      navigationOptions: {
+        header: null,
+        mode: 'modal',
+        headerMode: 'none',
+      },
+    },
+    DrawerInit: {
+      screen: DrawerInit,
+      navigationOptions: {
+        header: null,
+      },
     },
   },
-  TabView: {
-    screen: TabNavMain,
-    navigationOptions: {
-      header: null,
-    },
+  {
+    mode: 'modal',
   },
-  Drawer: {
-    name: 'Drawer Example',
-    description: 'Android-style drawer navigation',
-    screen: Drawer,
-    navigationOptions: {
-      header: null,
-    },
-  },
-  DrawerInit: {
-    screen: DrawerInit,
-    navigationOptions: {
-      header: null,
-    },
-  },
-});
+);
 
 export default Navigator;
