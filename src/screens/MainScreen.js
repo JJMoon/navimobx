@@ -94,7 +94,7 @@ class MainScreen extends Component {
         <SomeText title="Title" content="Content from MainScreen" />
 
         <View style={{ width: '100%', height, backgroundColor: '#0000' }}>
-          <View style={{ width: '100%', osition: 'absolute', flexDirection: 'row', height: 70 }} >
+          <View style={{ width: '100%', position: 'absolute', flexDirection: 'row', height: 70 }} >
             <TouchableOpacity style={{ width: wUnit, height, backgroundColor: '#DA8' }} onPress={this.closeTheView} />
             <View style={{ flex: 1, height, backgroundColor: '#AAA' }} />
             <TouchableOpacity style={{ width: wUnit, height, backgroundColor: '#5DD' }} onPress={this.closeTheView} />
