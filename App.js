@@ -8,6 +8,7 @@ import StackNavigator from './src/navigator';
 YellowBox.ignoreWarnings([
   'Warning: isMounted(...) is deprecated',
   'Module RCTImageLoader',
+  'Remote debugger',
 ]);
 
 const store = new Store();
