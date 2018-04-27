@@ -1,9 +1,15 @@
 import React from 'react';
-import { Platform, StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { Platform, StyleSheet, Text, View, YellowBox, SafeAreaView } from 'react-native';
 import { Provider as MobXProvider, inject, observer } from 'mobx-react/native';
 
 import Store from './src/stores/Store';
 import StackNavigator from './src/navigator';
+
+YellowBox.ignoreWarnings([
+  'Warning: isMounted(...) is deprecated',
+  'Module RCTImageLoader',
+  'Remote debugger',
+]);
 
 const store = new Store();
 
